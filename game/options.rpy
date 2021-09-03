@@ -30,6 +30,15 @@ define config.version = "1.0"
 ## triple-quotes, and leave a blank line between paragraphs.
 
 define gui.about = _p("""
+Aaron Thapa - Programming, Voice Acting
+
+Avi Nawlakhe - Story Writing, Voice Acting
+
+Ihsan Amin - Background Art, Voice Acting
+
+Maribelle Chu - Programming, Character Art, Voice Acting
+
+Michael Hwang - Story Writing, Voice Acting
 """)
 
 

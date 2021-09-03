@@ -9,6 +9,12 @@ define tu = Character("[tutorname]")
 
 # The game starts here.
 
+transform midright:
+    xalign 0.75
+
+transform midleft:
+    xalign 0.25
+
 label start:
     $ rightanswers = 0
     $ tutorname = "pocky sensei"
@@ -19,26 +25,53 @@ label start:
 
     "Hi, I'm [mcname], and I'm a Junior student at Thomas Jefferson High School."
 
-    "I've never been good at Japanese, and now bla bla bla bla."
+    "The school year has just begun and I've already failed all three assignments in japanese."
 
-    scene bg classroom
+    scene bg classroom 1
 
     # This shows a character sprite. A placeholder is used, but you can
     # replace it by adding a file named "eileen happy.png" to the images
     # directory.
 
-    show sensei angry
+    show ss angry
 
     # These display lines of dialogue.
 
-    ss "[mcname], You are bad at japanese."
+    ss "[mcname], you have been failing at Japanese, this can't go on."
 
-    ss "I have found you a tutor. somethign someone else sombedaodsflkj."
+    ss "I can't teach you well enough so I have found you a tutor."
  
-    show tutor happy
-    show sensei happy
+    show ss angry at offscreenright with moveoutright
 
-    tu "Hi I'm [tutorname]"
+    with Pause(2.0) 
+
+    show ss happy at offscreenright
+    show tu happy at offscreenleft
+    with None
+    
+    show ss happy at midright
+    show tu happy at midleft
+    with ease
+
+    ss "[mcname], this is [tutorname]."
+    
+    tu "Nice to meet you [mcname]. Let's begin your training."
+
+    show ss happy at offscreenright
+    show tu happy at center
+    with ease
+
+    menu intro_response:
+        "Nice to meet you too, let's start!":
+            mc "Nice to meet you too, let's start!"
+        "Alright!":
+            mc "Alright!"
+        "よろしくおねがいします":
+            mc "よろしくおねがいします"
+        "UwU":
+            mc "UwU"
+    
+
     # This ends the game.
 
     return
