@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 12: expected statement.
-    mcname = renpy.input("What is your name?").strip()
-           ^
+File "game/script.rpy", line 60: choice menuitem expects a non-empty block.
+    "Nice to meet you too, let's start!":
+                                         ^
 
 Ren'Py Version: Ren'Py 7.4.8.1895
-Thu Sep  2 12:44:59 2021
+Thu Sep  2 22:52:32 2021
