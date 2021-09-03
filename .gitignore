@@ -3,4 +3,4 @@ log.txt
 errors.txt
 traceback.txt
 game/cache/*
-saves/*
+game/saves/*
