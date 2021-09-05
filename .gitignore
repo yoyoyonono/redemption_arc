@@ -1,4 +1,5 @@
 *.rpyc
+*.rpymc
 *.rpyb
 log.txt
 errors.txt
