@@ -258,9 +258,11 @@ screen quick_menu():
             textbutton _("SKIP") action Skip() alternate Skip(fast=True, confirm=True)
             textbutton _("AUTO") action Preference("auto-forward", "toggle")
             textbutton _("SAVE") action ShowMenu('save')
+            textbutton _("LOAD") action ShowMenu("load")
             textbutton _("QSAVE") action QuickSave()
             textbutton _("QLOAD") action QuickLoad()
             textbutton _("OPTION") action ShowMenu('preferences')
+            textbutton _("TOPMENU") action MainMenu()
 
 
 ## This code ensures that the quick_menu screen is displayed in-game, whenever
@@ -319,7 +321,7 @@ screen navigation():
 
         elif not main_menu:
 
-            textbutton _("TOP") action MainMenu()
+            textbutton _("TOPMENU") action MainMenu()
 
         textbutton _("ABOUT") action ShowMenu("about")
 
