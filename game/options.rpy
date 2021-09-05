@@ -36,7 +36,7 @@ Avi Nawlakhe - Story Writing, Voice Acting
 
 Ihsan Amin - Background Art, Voice Acting
 
-Maribelle Chu - Programming, Character Art, Voice Acting
+Maribelle Chu - Character Art, Voice Acting
 
 Michael Hwang - Story Writing, Voice Acting
 """)
