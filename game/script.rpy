@@ -485,5 +485,85 @@ label start:
 
     scene bg classroom 1
     with dissolve
+    with Pause(0.25)
 
+    show ss
+    with dissolve
+
+    ss "Okay class! Put everything under your desk except for a pencil..."
+    ss "And Start!"
+
+    $ thistestrightanswers = 0
+
+    menu test_3_question_1:
+        "Pick the hiragana that goes with the phrase：ちかくに「山」があります。"
+        "かわ":
+            mc "かわ"  
+        "やま":
+            mc "やま"
+            $ thistestrightanswers += 1
+        "いけ":
+            mc "いけ"
+        "うみ":
+            mc "うみ"
+    
+    menu test_3_question_2:
+        "Pick the hiragana that goes with the phrase：このホテルは「多い」です。"
+        "すくない":
+            mc "すくない"
+        "おおい":
+            mc "おおい"
+            $ thistestrightanswers += 1
+        "せまい":
+            mc "せまい"
+        "ひろい":
+            mc "ひろい"
+    
+    menu test_3_question_3:
+        "Pick the hiragana that goes with the phrase：ともだちといっしょうに「学校」にいきます。"
+        "がこう":
+            mc "がこう"
+        "がこお":
+            mc "がこお"
+        "がっこう":
+            mc "がっこう"
+            $ thistestrightanswers += 1
+        "がっこお":
+            mc "がっこお"
+    
+    menu test_3_question_4:
+        "Pick the hiragana that matches the kanji：えんぴつが「六本」あります。"
+        "ろくほん":
+            mc "ろくほん"
+        "ろくぽん":
+            mc "ろくぽん"
+        "ろっぼん":
+            mc "ろっぼん"
+        "ろっぽん":
+            mc "ろっぽん"
+    
+    menu test_3_question_5:
+        "Pick the hiragana tnhat matches the kanji：この「新聞」はいくらですか。"
+        "しんむん":
+            mc "しんむん"
+        "しんぶん":
+            mc "しんぶん"
+            $ thistestrightanswers += 1
+        "しむん":
+            mc "しむん"
+        "しぶん":
+            mc "しぶん"
+    
+    menu test_3_question_6:
+        "Pick the hiragana that matches the kanji：このカメラは「安い」です。"
+        "たかい":
+            mc "たかい"
+        "やすい":
+            mc "やすい"
+            $ thistestrightanswers += 1
+        "おもい": 
+            mc "おもい"
+        "かるい":
+            mc "かるい"
+    
     return
