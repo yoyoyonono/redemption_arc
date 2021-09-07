@@ -3,6 +3,13 @@
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
 
+init python:
+    def dismiss_callback():
+        renpy.play("audio/advance.wav")
+        return True
+
+    config.say_allow_dismiss = dismiss_callback
+
 define mc = Character("[mcname]")
 define ss = Character("Sensei")
 define tu = Character("[tutorname]")
@@ -15,11 +22,32 @@ transform midright:
 transform midleft:
     xalign 0.25
 
+label splashscreen:
+    with Pause (0.25)
+
+    play sound splash
+    scene black 
+    with Pause(1)
+
+    show text "{size=+20}オーサムチーム"
+    with dissolve
+    with Pause(2)
+
+    hide text with dissolve
+    show text "{size=+20}Presents"
+    with Pause(1)
+
+    hide text with dissolve
+    with Pause(1)
+
+    return
+
 label start:
     $ totalrightanswers = 0
     $ thistestrightanswers = 0
     $ tutorname = "pocky sensei"
     $ mcname = renpy.input("What is your name?").strip()
+    play sound advance
     # Show a background. This uses a placeholder by default, but you can
     # add a file (named either "bg room.png" or "bg room.jpg") to the
     # images directory to show it.
