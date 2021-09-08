@@ -23,22 +23,22 @@ transform midleft:
     xalign 0.25
 
 label splashscreen:
-    with Pause (0.25)
+    $ renpy.pause(0.25)
 
     play sound splash
     scene black 
-    with Pause(1)
+    $ renpy.pause(1, hard=True)
 
     show text "{size=+20}オーサムチーム"
     with dissolve
-    with Pause(2)
+    $ renpy.pause(2, hard=True)
 
     hide text with dissolve
     show text "{size=+20}Presents"
-    with Pause(1)
+    $ renpy.pause(1, hard=True)
 
     hide text with dissolve
-    with Pause(1)
+    $ renpy.pause(1, hard=True)
 
     return
 
@@ -291,7 +291,7 @@ label start:
 
     scene bg bedroom e morning
     with fade
-    "dude's gonna say something here because why not"
+    "That was some nice sleep. I'll do well at school today."
 
     scene bg classroom 1
     with fade
@@ -565,5 +565,335 @@ label start:
             mc "おもい"
         "かるい":
             mc "かるい"
+
+    menu test_3_question_7:
+        "Pick the hiragana that matches the kanji：かさは「外」にあります。"
+        "いえ":
+            mc "いえ"
+        "なか":
+            mc "なか"
+        "そと":
+            mc "そと"
+            $ thistestrightanswers += 1
+        "にわ":
+            mc "にわ"
     
+        
+    menu test_3_question_8:
+        tu "Which hiragana matches the kanji：「新しい」　くるまですれ。"
+        "あたらしい":
+            mc "あたらしい"
+            tu "Yes! Great job!"
+            $ thistestrightanswers += 1
+        "あだらしい":
+            mc "あだらしい"
+            tu "Sorry that’s wrong, the right answer was あたらしい"
+        "あらたしい":
+            mc "あらたしい" 
+            tu "Sorry that’s wrong, the right answer was あたらしい"
+        "あらだしい":
+            mc "あらだしい" 
+            tu "Sorry that’s wrong, the right answer was あたらしい"
+
+
+    menu test_3_question_9:
+        tu "Which kanji represents the hiragana：「そと」で　まちましょう。"
+        "外":
+            mc "外"
+            tu "Yes! Great job!"
+            $ thistestrightanswers += 1
+        "言":
+            mc "言"
+            tu "Sorry that’s wrong, the right answer was 外"
+        "中":
+            mc "中"
+            tu "Sorry that’s wrong, the right answer was 外"
+        "頃":
+            mc "頃"
+            tu "Sorry that’s wrong, the right answer was 外"
+    
+
+
+
+
+    menu test_3_question_10:
+        tu "Figure out which hiragana best suits the sentence：ここは　（＿＿＿＿）です。　べんきょできません。"
+        "くらい":
+            mc "くらい"
+            tu "Sorry that’s wrong, the right answer was うるさい"
+        "さむい":
+            mc "さむい"
+            tu "Sorry that’s wrong, the right answer was うるさい"
+        "うるさい":
+            mc "うるさい"
+            tu "Yes! Great job!"
+            $ thistestrightanswers += 1
+        "あぶない":
+            mc "あぶない"
+            tu "Sorry that’s wrong, the right answer was うるさい"
+
+    menu test_3_question_11:
+        tu "Which particle should fill in the blank? これ「＿＿」えんぴつです。"
+        "に":
+            mc "に"
+            tu "Sorry, that's wrong, the right answer was は"
+        "を":
+            mc "を"
+            tu "Sorry, that's wrong, the right answer was は"
+        "は":
+            mc "は"
+            tu "Yes! Great job!"
+            $ thistestrightanswers += 1
+        "や":
+            mc "や"
+            tu "Sorry, that's wrong, the right answer was は"
+
+
+    menu test_3_question_12:
+        tu "あしたは「火曜日」です。"
+        "どようび":
+            mc "どようび"
+            tu "Sorry that’s wrong, the right answer was かようび"
+        "すいようび":
+            mc "すいようび"
+            tu "Sorry that’s wrong, the right answer was かようび"
+        "かようび":
+            mc "かようび"
+            tu "Yes! That's correct, good job!"
+            $ thistestrightanswers += 1
+        "にちようび":
+            mc "にちようび"
+
+    menu test_3_question_13:
+        tu "What is the reading of this kanji in the sentence: あしたは「雨」ですか。"
+        "ゆき":
+            mc "ゆき"
+            tu "Sorry that’s wrong, the right answer was あめ"
+        "はれ":
+            mc "はれ"
+            tu "Sorry that’s wrong, the right answer was あめ"
+        "くもり":
+            mc "くもり"
+            tu "Sorry that’s wrong, the right answer was あめ"
+        "あめ":
+            mc "あめ"
+            tu "Yes! Great job!"
+            $ thistestrightanswers += 1
+    menu test_3_question_14:
+        tu "せいとは「百人」です。"
+        "ひゃくにん":
+            mc "ひゃくにん"
+            tu "Yes! Great job!"
+            $ thistestrightanswers += 1
+        "びゃくにん":
+            mc "びゃくにん"
+            tu "Sorry that’s wrong, the right answer was ひゃくにん"
+        "ひゃくじん":
+            mc "ひゃくじん"
+            tu "Sorry that’s wrong, the right answer was ひゃくにん"
+        "びゃくじん":
+            mc "びゃくじん"
+            tu "Sorry that’s wrong, the right answer was ひゃくにん"
+
+    menu test_3_question_15:
+        tu "Figure out the correct sentence ending：しつもんが"
+        "あります。":
+            mc "あります。"
+            tu "Perfect! Keep it up!"
+            $ thistestrightanswers += 1
+        "います。":
+            mc "います。"
+            tu "Sorry that’s wrong, the right answer was あります。"
+    menu test_3_question_16:
+        tu "Pick the right kanji for the phrase：わたしのくには「かわ」がおおいです。"
+        "花":
+            mc "花"
+            tu "Sorry, that's wrong, the right answer was 川。"
+        "山":
+            mc "山"
+            tu "Sorry, that's wrong, the right answer was 川。"
+        "川":
+            mc "川"
+            tu "Yes! Great job!"
+            $ thistestrightanswers += 1
+        "木":
+            mc "木"
+            tu "Sorry, that's wrong, the right answer was 川。"
+    menu test_3_question_17:
+        tu "Figure out which hiragana best suits the sentence：あそこで　タクシーに「＿＿＿＿＿」。"
+        "のりました":
+            mc "のりました"
+            tu "Yes! Great job!"
+            $ thistestrightanswers += 1
+        "あがりました":
+            mc "あがりました"
+            tu "Sorry that’s wrong, the right answer was のりました"
+        "つきました":
+            mc "つきました"
+            tu "Sorry that’s wrong, the right answer was のりました"
+        "はいりました":
+            mc "はいりました"
+            tu "Sorry that’s wrong, the right answer was のりました"
+
+    menu test_3_question_18:
+        tu "Which particle should fill in the blank? 弟　（おとうと）は　へや　「＿」そうじを　しました。"
+        "が":
+            mc "が"
+            tu "Sorry, that's wrong, the right answer was に"
+        "を":
+            mc "を"
+            tu "Sorry, that's wrong, the right answer was に"
+        "に":
+            mc "に"
+            tu "Yes! Great job!"
+            $ thistestrightanswers += 1
+        "の":
+            mc "の"
+            tu "Sorry, that's wrong, the right answer was に"
+
+    menu test_3_question_19:
+        tu "What verb would best complete this sentence?　すしを"
+        "ねます":
+            mc "ねます"
+            tu "Sorry that’s wrong, the correct answer was 食べます"
+        "つくります":
+            mc "つくります"
+            tu "Sorry that’s wrong, the correct answer was 食べます"
+        "食べます（たべます）":
+            mc "食べます"
+            tu "Yes! That's correct, good job!"
+            $ thistestrightanswers += 1
+        "飲みます（のみます）":
+            mc "飲みます"
+            tu "Sorry that’s wrong, the correct answer was 食べます"
+    menu test_3_question_20:
+        tu "Figure out which hiragana matches the kanji：この　いすは「小さい」です。"
+        "ちいさい":
+            mc "ちいさい"
+            tu "Yes! Great job!"
+            $ thistestrightanswers += 1
+        "ちさい":
+            mc "ちさい"
+            tu "Sorry that’s wrong, the right answer was ちいさい"
+        "しいさい":
+            mc "しいさい"
+            tu "Sorry that’s wrong, the right answer was ちいさい"
+        "しさい":
+            mc "しさい"
+            tu "Sorry that’s wrong, the right answer was ちいさい"
+        
+    menu test_3_question_21:
+        tu "Figure out which kanji represents the hiragana：「魚」が　たくさん　いますよ。"
+        "ねこ":
+            mc "ねこ"
+            tu "Sorry, that's wrong, the right answer was さかな。"
+        "とり":
+            mc "とり"
+            tu "Sorry, that's wrong, the right answer was さかな。"
+        "いぬ":
+            mc "いぬ"
+            tu "Sorry, that's wrong, the right answer was さかな。"
+        "さかな":
+            mc "さかな"
+            tu "Yes! Great job!"
+            $ thistestrightanswers += 1
+    
+    menu test_3_question_22:
+        tu "Figure out which hiragana matches the kanji：たまごを「三つ」とって　ください。"
+        "いつつ":
+            mc "いつつ"
+            tu "Sorry, that's wrong, the right answer was みっつ。"
+        "みっつ":
+            mc "みっつ"
+            tu "Yes! Great job!"
+            $ thistestrightanswers += 1
+        "さんつ":
+            mc "さんつ"
+            tu "Sorry, that's wrong, the right answer was みっつ。"
+        "ごつ":
+            mc "ごつ"
+            tu "Sorry, that's wrong, the right answer was みっつ。"
+
+    menu test_3_question_23:
+        tu "Which hiragana matches the kanji：しゃしんは　はこ　の「中」に　あります。"
+        "そば":
+            mc "そば"
+            tu "Sorry that’s wrong, the right answer was なか"
+        "そと":
+            mc "そと"
+            tu "Sorry that’s wrong, the right answer was なか"
+        "なか":
+            mc "なか"
+            tu "Yes! Great job!"
+            $ thistestrightanswers += 1
+        "よこ":
+            mc "よこ"
+            tu "Sorry that’s wrong, the right answer was なか"
+
+
+
+
+    menu test_3_question_24:
+        tu "Figure out which hiragana best suits the sentence：このざっしを「みて」ください。"
+        "見て":
+            mc "見て"
+            tu "Yes! Great job!"
+            $ thistestrightanswers += 1
+        "買て":
+            mc "買て"
+            tu "Sorry, that's wrong, the right answer was 見て。"
+        "貝て":
+            mc "貝て"
+            tu "Sorry, that's wrong, the right answer was 見て。"
+        "目て":
+            mc "目て"
+            tu "Sorry, that's wrong, the right answer was 見て。"
+
+    menu test_3_question_25:
+        tu "Which kanji goes with the phrase? このカメラは「たかい」ですね。"
+        "高い":
+            mc "高い"
+            tu "Yes! Great job!"
+            $ thistestrightanswers += 1
+        "安い":
+            mc "安い"
+            tu "Sorry, that's wrong, the right answer was 高い。"
+        "古い":
+            mc "古い"
+            tu "Sorry, that's wrong, the right answer was 高い。"
+        "新い":
+            mc "新い"
+            tu "Sorry, that's wrong, the right answer was 高い。"
+    menu test_3_question_26:
+        tu "Now, pick the right katakana for the phrase：この「わいしゃつ」をください。"
+        "ウイシャソ":
+            mc "ウイシャソ"
+            tu "Sorry, that's wrong, the right answer was ワイシャツ。"
+        "ウイシャツ":
+            mc "ウイシャツ"
+            tu "Sorry, that's wrong, the right answer was ワイシャツ。"
+        "ワイシャソ":
+            mc "ワイシャソ"
+            tu "Sorry, that's wrong, the right answer was ワイシャツ。"
+        "ワイシャツ":
+            mc "ワイシャツ"
+            tu "Yes! Great job!"
+            $ thistestrightanswers += 1
+
+
+    menu test_3_question_27:
+        tu "Which kanji is in the phrase? やんさんの「がっこう」はどこですか。"
+        "宇校":
+            mc "宇校"
+            tu "Sorry, that's wrong, the right answer was 学校。"
+        "学校":
+            mc "学校"
+            tu "Yes! Great job!"
+            $ thistestrightanswers += 1
+        "宇枚":
+            mc "宇枚"
+            tu "Sorry, that's wrong, the right answer was 学校。"
+        "学枚":
+            mc "学枚"
+            tu "Sorry, that's wrong, the right answer was 学校。"
     return
