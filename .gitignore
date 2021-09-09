@@ -1,7 +1,7 @@
 *.rpyc
 *.rpymc
 *.rpyb
-log.txt
+log.*
 errors.txt
 traceback.txt
 game/cache/
