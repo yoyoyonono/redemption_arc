@@ -124,6 +124,10 @@ define config.window_show_transition = Dissolve(.2)
 define config.window_hide_transition = Dissolve(.2)
 
 
+define config.default_music_volume = 0.6
+define config.default_sfx_volume = 0.6
+define config.default_voice_volume = 1.0
+
 ## Preference defaults #########################################################
 
 ## Controls the default text speed. The default, 0, is infinite, while any other
