@@ -764,7 +764,7 @@ screen preferences():
 
                     label _("Auto-Forward Time")
 
-                    bar value Preference("auto-forward time")
+                    bar value Preference("auto-forward time") bar_invert True
 
                 vbox:
 
